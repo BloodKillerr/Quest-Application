@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 424aacf389305024a8c6c5b230136f80
+guid: ae7ceb7419f068445a4b775c26369789
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - MATHER LAORD trial
+  - Morris Roman
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

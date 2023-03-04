@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Polish
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e4b8efed3a7a4f74b9a01d04b82394d8, type: 2}
-  m_sharedMaterial: {fileID: -3251122259260850438, guid: e4b8efed3a7a4f74b9a01d04b82394d8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f919b4ce09b6bab49ba1a3a17e678925, type: 2}
+  m_sharedMaterial: {fileID: -3632510668119929278, guid: f919b4ce09b6bab49ba1a3a17e678925, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 84
-  m_fontSizeBase: 84
+  m_fontSize: 85
+  m_fontSizeBase: 85
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
