@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-//Class for collecting all the UI elements needed for the aplication, as well as function to close the game
 public class UIManager : MonoBehaviour
 {
+    [Header("LocalizedTextElements")]
+    public TextLocalizerUI[] TextLocalizerUIElements;
     #region Singleton
     public static UIManager Instance;
 
@@ -21,7 +22,6 @@ public class UIManager : MonoBehaviour
     }
     #endregion
 
-    //Function for quitting the application
     public void QuitApp()
     {
         Application.Quit();
