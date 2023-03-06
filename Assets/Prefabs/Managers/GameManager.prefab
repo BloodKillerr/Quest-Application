@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 8670982171380573801}
   - component: {fileID: 8977902290994202738}
   - component: {fileID: 4583664520101361580}
+  - component: {fileID: 256175638588020278}
+  - component: {fileID: 4943125003456854273}
+  - component: {fileID: 2687509408370733730}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -46,6 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8c588adc0a84ed468ca80bd7b3aa6bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TextLocalizerUIElements: []
+  QuestPrefab: {fileID: 0}
 --- !u!114 &8977902290994202738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,6 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentLanguage: 0
+  attributeId: en
   isInit: 0
 --- !u!114 &4583664520101361580
 MonoBehaviour:
@@ -72,3 +78,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ea6b5440f941a34a9f1e02cb8d7ecdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &256175638588020278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8670982171380573807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38c4c788ab37aa445b6a243e21ad586a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QuestSystemComponent: {fileID: 0}
+  LevelingComponent: {fileID: 0}
+--- !u!114 &4943125003456854273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8670982171380573807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424e6a79dbd6efb44aa7ddbb4d30d412, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentXp: 0
+  DesiredXp: 100
+  CurrentLevel: 1
+  MaxLevel: 999
+--- !u!114 &2687509408370733730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8670982171380573807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd50da9c6b279184c904efcdc887e6e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentQuests: []

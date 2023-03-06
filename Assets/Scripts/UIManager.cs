@@ -8,6 +8,10 @@ public class UIManager : MonoBehaviour
 {
     [Header("LocalizedTextElements")]
     public TextLocalizerUI[] TextLocalizerUIElements;
+
+    [Header("QuestElements")]
+    public GameObject QuestPrefab;
+    public GameObject QuestList;
     #region Singleton
     public static UIManager Instance;
 

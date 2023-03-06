@@ -59,9 +59,14 @@ public class LocalizationSystem : MonoBehaviour
     {
         CSVLoader.Instance.LoadCSV(attributeId);
 
-        localized = CSVLoader.Instance.GetDictionaryValues();
+        UpdateDictionary();
 
         isInit = true;
+    }
+
+    public void UpdateDictionary()
+    {
+        localized = CSVLoader.Instance.GetDictionaryValues();
     }
 
     public string GetLocalizedValue(string key)

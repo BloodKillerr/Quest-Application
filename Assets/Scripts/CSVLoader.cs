@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Networking.Types;
 
 public class CSVLoader : MonoBehaviour
 {
     private TextAsset csvFile;
-    private string lineSeperator = System.Environment.NewLine;
+    private string lineSeparator = System.Environment.NewLine;
     private char surround = '"';
-    private string[] fieldSeperator = { "\",\"" };
 
     #region Singleton
     public static CSVLoader Instance;
@@ -36,14 +39,13 @@ public class CSVLoader : MonoBehaviour
                 csvFile = Resources.Load<TextAsset>("localizationPL");
                 break;
         }
-        
     }
 
     public Dictionary<string,string> GetDictionaryValues()
     {
         Dictionary<string, string> dictionary = new Dictionary<string, string>();
 
-        string[] lines = csvFile.text.Split(lineSeperator);
+        string[] lines = csvFile.text.Split(lineSeparator);
 
         Regex CSVParser = new Regex(",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
 
