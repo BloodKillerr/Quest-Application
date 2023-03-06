@@ -13,8 +13,9 @@ public class LocalizationSystem : MonoBehaviour
 
     public Language CurrentLanguage = Language.English;
 
-    private Dictionary<string, string> localizedEN;
-    private Dictionary<string, string> localizedPL;
+    public string attributeId = "en";
+
+    private Dictionary<string, string> localized;
 
     public bool isInit;
 
@@ -38,9 +39,13 @@ public class LocalizationSystem : MonoBehaviour
         {
             case 0:
                 CurrentLanguage = Language.English;
+                attributeId = "en";
+                Init();
                 break;
             case 1:
                 CurrentLanguage = Language.Polish;
+                attributeId = "pl";
+                Init();
                 break;
         }
 
@@ -52,10 +57,9 @@ public class LocalizationSystem : MonoBehaviour
 
     public void Init()
     {
-        CSVLoader.Instance.LoadCSV();
+        CSVLoader.Instance.LoadCSV(attributeId);
 
-        localizedEN = CSVLoader.Instance.GetDictionaryValues("en");
-        localizedPL = CSVLoader.Instance.GetDictionaryValues("pl");
+        localized = CSVLoader.Instance.GetDictionaryValues();
 
         isInit = true;
     }
@@ -67,17 +71,9 @@ public class LocalizationSystem : MonoBehaviour
             Init();
         }
 
-        string value = key;
+        string value;
 
-        switch(CurrentLanguage)
-        {
-            case Language.English:
-                localizedEN.TryGetValue(key, out value);
-                break;
-            case Language.Polish:
-                localizedPL.TryGetValue(key, out value);
-                break;
-        }
+        localized.TryGetValue(key, out value);
 
         return value;
     }

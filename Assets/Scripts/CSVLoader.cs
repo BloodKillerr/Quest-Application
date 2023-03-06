@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CSVLoader : MonoBehaviour
@@ -24,33 +25,29 @@ public class CSVLoader : MonoBehaviour
     }
     #endregion
 
-    public void LoadCSV()
+    public void LoadCSV(string attributeId)
     {
-        csvFile = Resources.Load<TextAsset>("localizationEN");
+        switch(attributeId)
+        {
+            case "en":
+                csvFile = Resources.Load<TextAsset>("localizationEN");
+                break;
+            case "pl":
+                csvFile = Resources.Load<TextAsset>("localizationPL");
+                break;
+        }
+        
     }
 
-    public Dictionary<string,string> GetDictionaryValues(string attributeId)
+    public Dictionary<string,string> GetDictionaryValues()
     {
         Dictionary<string, string> dictionary = new Dictionary<string, string>();
 
         string[] lines = csvFile.text.Split(lineSeperator);
 
-        int attributeIndex = -1;
-
-        string[] headers = lines[0].Split(fieldSeperator, System.StringSplitOptions.None);
-
-        for(int i=0; i < headers.Length; i++)
-        {
-            if (headers[i].Contains(attributeId))
-            {
-                attributeIndex = i;
-                break;
-            }
-        }
-
         Regex CSVParser = new Regex(",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
 
-        for(int i = 1; i<lines.Length; i++)
+        for(int i = 0; i<lines.Length; i++)
         {
             string line = lines[i];
 
@@ -62,19 +59,16 @@ public class CSVLoader : MonoBehaviour
                 fields[f] = fields[f].TrimEnd(surround);
             }
 
-            if(fields.Length > attributeIndex)
+            string key = fields[0];
+
+            if (dictionary.ContainsKey(key))
             {
-                string key = fields[0];
-
-                if(dictionary.ContainsKey(key))
-                {
-                    continue;
-                }
-
-                string value = fields[attributeIndex];
-
-                dictionary.Add(key, value);
+                continue;
             }
+
+            string value = fields[1];
+
+            dictionary.Add(key, value);
         }
 
         return dictionary;
