@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 256175638588020278}
   - component: {fileID: 4943125003456854273}
   - component: {fileID: 2687509408370733730}
+  - component: {fileID: 2762579650857100861}
+  - component: {fileID: 741660952639726273}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -50,7 +52,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextLocalizerUIElements: []
+  MainPanel: {fileID: 0}
+  SettingsPanel: {fileID: 0}
+  QuestCreationPanel: {fileID: 0}
+  RequirementsPanel: {fileID: 0}
+  QuestOverviewPanel: {fileID: 0}
+  XpSlider: {fileID: 0}
+  LevelText: {fileID: 0}
   QuestPrefab: {fileID: 0}
+  QuestList: {fileID: 0}
+  QuestTitleText: {fileID: 0}
+  QuestRewardText: {fileID: 0}
+  QuestPunishmentText: {fileID: 0}
+  QuestOverviewRequirementPrefab: {fileID: 0}
 --- !u!114 &8977902290994202738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,3 +135,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentQuests: []
+--- !u!114 &2762579650857100861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8670982171380573807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83346b18806e51c4f9eadd8e505d9241, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QuestTitleInputField: {fileID: 0}
+  RequirementsNumberInputField: {fileID: 0}
+  ExperienceAmountInputField: {fileID: 0}
+  PunishmentRateInputField: {fileID: 0}
+  RequirementsArea: {fileID: 0}
+  RequirementPrefab: {fileID: 2436292608151678368, guid: b858aad709ee9944c9872979d54e12a5, type: 3}
+--- !u!114 &741660952639726273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8670982171380573807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e552bb81a4276a439dd9eee04adbc5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Quest:
+    Title: 
+    Requirements: []
+    PunishmentRate: 1
+    XP: 50
+  RequirementsOverviewArea: {fileID: 0}

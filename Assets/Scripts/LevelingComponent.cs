@@ -9,15 +9,22 @@ public class LevelingComponent : MonoBehaviour
     public int CurrentLevel = 1;
     public int MaxLevel = 999;
 
+    private void Start()
+    {
+        UpdateUI();
+    }
+
     public void AddXp(int x)
     {
         CurrentXp += x;
         Check();
+        UpdateUI();
     }
 
     public void RemoveXp(int x)
     {
         CurrentXp -= x;
+        UpdateUI();
     }
 
     public void Check()
@@ -40,5 +47,13 @@ public class LevelingComponent : MonoBehaviour
         {
             CurrentXp = DesiredXp;
         }
+        UpdateUI();
+    }
+
+    public void UpdateUI()
+    {
+        UIManager.Instance.LevelText.text = CurrentLevel.ToString();
+        UIManager.Instance.XpSlider.maxValue = DesiredXp;
+        UIManager.Instance.XpSlider.value = CurrentXp;
     }
 }

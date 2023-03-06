@@ -7,7 +7,7 @@ public class Quest
 {
     public string Title;
 
-    public Requirement[] Requirements;
+    public List<Requirement> Requirements = new List<Requirement>();
 
     public float PunishmentRate = 1f;
 
@@ -29,15 +29,40 @@ public class Quest
         }
     }
 
+    public bool IsOnAnotherLevel
+    {
+        get
+        {
+            foreach (Requirement requirement in Requirements)
+            {
+                if (!requirement.IsOnAnotherLevel)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+    }
+
     public void GainRewards()
     {
-        Player.Instance.LevelingComponent.AddXp(XP);
+        if(IsOnAnotherLevel)
+        {
+            Player.Instance.LevelingComponent.AddXp(XP*2);
+        }
+        else
+        {
+            Player.Instance.LevelingComponent.AddXp(XP);
+        } 
     }
 }
 
 [System.Serializable]
 public class Requirement
 {
+    public string RequirementName;
+
     public int DesiredAmount = 100;
 
     public int CurrentAmount = 0;
@@ -45,6 +70,12 @@ public class Requirement
     public bool IsComplete = false;
 
     public bool IsOnAnotherLevel = false;
+
+    public Requirement(string requirementName, int desiredAmount)
+    {
+        RequirementName = requirementName;
+        DesiredAmount = desiredAmount;
+    }
 
     public void AddCount(int amount)
     {
