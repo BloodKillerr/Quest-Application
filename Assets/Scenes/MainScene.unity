@@ -3200,6 +3200,7 @@ RectTransform:
   - {fileID: 439698501}
   - {fileID: 606926402}
   - {fileID: 1847208447}
+  - {fileID: 1325657173}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3784,6 +3785,42 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6971260659039368791, guid: cd1c43ca450d0744a910a541a80acfa1, type: 3}
   m_PrefabInstance: {fileID: 6971260659549936701}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1325657172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1325657173}
+  m_Layer: 5
+  m_Name: PopUpSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1325657173
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325657172}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 894977453}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 729}
+  m_SizeDelta: {x: 100, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1377871993
 GameObject:
   m_ObjectHideFlags: 0
@@ -7173,6 +7210,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5863308595898322085, guid: bcd8eb2aa86daf64986c2067e6b648dc, type: 3}
     - target: {fileID: 8670982171380573801, guid: 4119cd252e1da0d458aaedf55c4ce91b, type: 3}
+      propertyPath: MessagePrefab
+      value: 
+      objectReference: {fileID: 3336179105914492979, guid: 19a20438346d7f14498f68b6f8bf94a9, type: 3}
+    - target: {fileID: 8670982171380573801, guid: 4119cd252e1da0d458aaedf55c4ce91b, type: 3}
       propertyPath: SettingsPanel
       value: 
       objectReference: {fileID: 7624992}
@@ -7184,6 +7225,10 @@ PrefabInstance:
       propertyPath: QuestRewardText
       value: 
       objectReference: {fileID: 1285401908}
+    - target: {fileID: 8670982171380573801, guid: 4119cd252e1da0d458aaedf55c4ce91b, type: 3}
+      propertyPath: MessageSpawnPoint
+      value: 
+      objectReference: {fileID: 1325657172}
     - target: {fileID: 8670982171380573801, guid: 4119cd252e1da0d458aaedf55c4ce91b, type: 3}
       propertyPath: RequirementsPanel
       value: 

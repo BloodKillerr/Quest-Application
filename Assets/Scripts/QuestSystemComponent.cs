@@ -25,6 +25,7 @@ public class QuestSystemComponent : MonoBehaviour
         changePanel.CanvasGroupToClose = UIManager.Instance.MainPanel;
         go.GetComponentInChildren<TMP_Text>().text = quest.Title;
         go.GetComponent<QuestButton>().Quest = quest;
+        UIManager.Instance.AddToQueue("Quest Added!");
     }
 
     public void RemoveQuest(Quest quest)
@@ -45,5 +46,7 @@ public class QuestSystemComponent : MonoBehaviour
                 Destroy(questTransform.gameObject);
             }
         }
+
+        UIManager.Instance.AddToQueue("Quest Removed!");
     }
 }
