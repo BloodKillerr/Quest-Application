@@ -6585,7 +6585,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 0.25490198}
+    m_DisabledColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 0.80784315}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -7229,6 +7229,10 @@ PrefabInstance:
       propertyPath: MessageSpawnPoint
       value: 
       objectReference: {fileID: 1325657172}
+    - target: {fileID: 8670982171380573801, guid: 4119cd252e1da0d458aaedf55c4ce91b, type: 3}
+      propertyPath: QuestCompleteText
+      value: 
+      objectReference: {fileID: 6075032185240093173}
     - target: {fileID: 8670982171380573801, guid: 4119cd252e1da0d458aaedf55c4ce91b, type: 3}
       propertyPath: RequirementsPanel
       value: 

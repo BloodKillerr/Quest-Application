@@ -57,6 +57,7 @@ public class Quest
         IsAvailable = true;
         TimeToComplete = dateTime;
         UIManager.Instance.QuestCompleteButton.interactable = true;
+        UIManager.Instance.QuestCompleteText.alpha = 1f;
     }
 
     public void SetNewTime(System.DateTime dateTime)
@@ -65,6 +66,7 @@ public class Quest
         RemovePunishment();
         TimeToComplete = dateTime;
         UIManager.Instance.QuestCompleteButton.interactable = true;
+        UIManager.Instance.QuestCompleteText.alpha = 1f;
     }
 
     public void GainRewards()
@@ -81,6 +83,7 @@ public class Quest
             }
             IsAvailable = false;
             UIManager.Instance.QuestCompleteButton.interactable = false;
+            UIManager.Instance.QuestCompleteText.alpha = .6f;
         }   
     }
 

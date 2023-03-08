@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEditor.VersionControl;
 
 public class UIManager : MonoBehaviour
 {
@@ -29,6 +28,7 @@ public class UIManager : MonoBehaviour
     public TMP_Text QuestPunishmentText;
     public GameObject QuestOverviewRequirementPrefab;
     public Button QuestCompleteButton;
+    public TMP_Text QuestCompleteText;
 
     [Header("Message")]
     public GameObject MessagePrefab;

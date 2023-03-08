@@ -42,10 +42,12 @@ public class QuestOverviewManager : MonoBehaviour
         if(Quest.IsAvailable)
         {
             UIManager.Instance.QuestCompleteButton.interactable = true;
+            UIManager.Instance.QuestCompleteText.alpha = 1f;
         }
         else
         {
             UIManager.Instance.QuestCompleteButton.interactable = false;
+            UIManager.Instance.QuestCompleteText.alpha = .6f;
         }    
 
         foreach(Requirement requirement in Quest.Requirements)
@@ -74,7 +76,7 @@ public class QuestOverviewManager : MonoBehaviour
 
     internal void UpdateUI()
     {
-        if(Quest.IsOnAnotherLevel)
+        if(Quest.IsOnAnotherLevel && !Quest.PunishmentApplied)
         {
             UIManager.Instance.QuestRewardText.text = (Quest.XP*2).ToString();
         }
