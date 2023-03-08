@@ -28,6 +28,7 @@ public class UIManager : MonoBehaviour
     public TMP_Text QuestRewardText;
     public TMP_Text QuestPunishmentText;
     public GameObject QuestOverviewRequirementPrefab;
+    public Button QuestCompleteButton;
 
     [Header("Message")]
     public GameObject MessagePrefab;

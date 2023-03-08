@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [System.Serializable]
 public class Quest
@@ -12,6 +13,12 @@ public class Quest
     public float PunishmentRate = 1f;
 
     public int XP = 50;
+
+    public bool IsAvailable = true;
+
+    public bool PunishmentApplied = false;
+
+    public DateTime TimeToComplete;
 
     public bool IsComplete
     {
@@ -45,16 +52,91 @@ public class Quest
         }
     }
 
+    public void SetTimeToComplete(System.DateTime dateTime)
+    {
+        IsAvailable = true;
+        TimeToComplete = dateTime;
+        UIManager.Instance.QuestCompleteButton.interactable = true;
+    }
+
+    public void SetNewTime(System.DateTime dateTime)
+    {
+        IsAvailable = true;
+        RemovePunishment();
+        TimeToComplete = dateTime;
+        UIManager.Instance.QuestCompleteButton.interactable = true;
+    }
+
     public void GainRewards()
     {
-        if(IsOnAnotherLevel)
+        if(IsAvailable && IsComplete)
         {
-            Player.Instance.LevelingComponent.AddXp(XP*2);
+            if (IsOnAnotherLevel)
+            {
+                Player.Instance.LevelingComponent.AddXp(XP * 2);
+            }
+            else
+            {
+                Player.Instance.LevelingComponent.AddXp(XP);
+            }
+            IsAvailable = false;
+            UIManager.Instance.QuestCompleteButton.interactable = false;
+        }   
+    }
+
+    public void CheckTime()
+    {
+        if(IsAvailable && !PunishmentApplied)
+        {
+            if(TimeToComplete < System.DateTime.Now)
+            {
+                ApplyPunishment();
+
+                string newDate = string.Format("{0} 23:59:59", System.DateTime.Now.Date.ToString("dd-MM-yyyy"));
+
+                SetNewTime(System.DateTime.ParseExact(newDate, "dd-MM-yyyy HH:mm:ss", null));
+            }
         }
-        else
+        else if(IsAvailable && PunishmentApplied)
         {
-            Player.Instance.LevelingComponent.AddXp(XP);
-        } 
+            if (TimeToComplete < System.DateTime.Now)
+            {
+                string newDate = string.Format("{0} 23:59:59", System.DateTime.Now.Date.ToString("dd-MM-yyyy"));
+
+                SetNewTime(System.DateTime.ParseExact(newDate, "dd-MM-yyyy HH:mm:ss", null));
+            }
+        }
+    }
+
+    public void CheckIfToReset()
+    {
+        if(!IsAvailable)
+        {
+            if(TimeToComplete < System.DateTime.Now)
+            {
+                string newDate = string.Format("{0} 23:59:59", System.DateTime.Now.Date.ToString("dd-MM-yyyy"));
+
+                SetNewTime(System.DateTime.ParseExact(newDate, "dd-MM-yyyy HH:mm:ss", null));
+            }
+        }
+    }
+
+    public void ApplyPunishment()
+    {
+        foreach(Requirement requirement in Requirements)
+        {
+            requirement.DesiredAmount *= 2;
+        }
+        PunishmentApplied = true;
+    }
+
+    public void RemovePunishment()
+    {
+        foreach (Requirement requirement in Requirements)
+        {
+            requirement.DesiredAmount /= 2;
+        }
+        PunishmentApplied = false;
     }
 }
 

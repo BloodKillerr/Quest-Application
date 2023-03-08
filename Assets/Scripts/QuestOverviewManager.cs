@@ -38,6 +38,15 @@ public class QuestOverviewManager : MonoBehaviour
         UIManager.Instance.QuestTitleText.text = Quest.Title;
         UIManager.Instance.QuestRewardText.text = Quest.XP.ToString();
         UIManager.Instance.QuestPunishmentText.text = Quest.PunishmentRate.ToString();
+        
+        if(Quest.IsAvailable)
+        {
+            UIManager.Instance.QuestCompleteButton.interactable = true;
+        }
+        else
+        {
+            UIManager.Instance.QuestCompleteButton.interactable = false;
+        }    
 
         foreach(Requirement requirement in Quest.Requirements)
         {
@@ -49,9 +58,12 @@ public class QuestOverviewManager : MonoBehaviour
 
     public void ClaimRewards()
     {
-        Quest.GainRewards();
-        ChangePanel.ChangeCanvas();
-        UIManager.Instance.AddToQueue("Quest Completed!");
+        if(Quest.IsComplete)
+        {
+            Quest.GainRewards();
+            ChangePanel.ChangeCanvas();
+            UIManager.Instance.AddToQueue("Quest Completed!");
+        }   
     }
 
     public void RemoveQuest()
