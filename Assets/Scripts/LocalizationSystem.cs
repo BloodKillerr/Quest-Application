@@ -33,6 +33,19 @@ public class LocalizationSystem : MonoBehaviour
     }
     #endregion
 
+    public int GetCurrentLanguageIndex()
+    {
+        switch(CurrentLanguage)
+        {
+            case Language.English:
+                return 0;
+            case Language.Polish:
+                return 1;
+            default:
+                return -1;
+        }
+    }
+
     public void ChangeLanguage(float index)
     {
         switch(index)

@@ -6295,7 +6295,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7562511335092968752, guid: da3879c91f33dc7428e93db6a3d9edfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7562511335092968752, guid: da3879c91f33dc7428e93db6a3d9edfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -6304,6 +6304,14 @@ PrefabInstance:
     - target: {fileID: 7562511335092968752, guid: da3879c91f33dc7428e93db6a3d9edfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: QuitApp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562511335092968752, guid: da3879c91f33dc7428e93db6a3d9edfc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562511335092968752, guid: da3879c91f33dc7428e93db6a3d9edfc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7562511335092968753, guid: da3879c91f33dc7428e93db6a3d9edfc, type: 3}
       propertyPath: m_Pivot.x
@@ -7169,6 +7177,10 @@ PrefabInstance:
       propertyPath: RequirementsOverviewArea
       value: 
       objectReference: {fileID: 4265489375400708908}
+    - target: {fileID: 1570300366194672837, guid: 4119cd252e1da0d458aaedf55c4ce91b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2762579650857100861, guid: 4119cd252e1da0d458aaedf55c4ce91b, type: 3}
       propertyPath: RequirementsArea
       value: 

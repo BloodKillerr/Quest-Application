@@ -51,6 +51,7 @@ public class UIManager : MonoBehaviour
 
     public void QuitApp()
     {
+        SaveManager.instance.Save();
         Application.Quit();
     }
 
