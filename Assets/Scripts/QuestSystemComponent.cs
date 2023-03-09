@@ -13,6 +13,7 @@ public class QuestSystemComponent : MonoBehaviour
         {
             if(currentQuest.Title == quest.Title)
             {
+                UIManager.Instance.AddToQueue("quest_exists");
                 return;
             }
         }
@@ -25,7 +26,28 @@ public class QuestSystemComponent : MonoBehaviour
         changePanel.CanvasGroupToClose = UIManager.Instance.MainPanel;
         go.GetComponentInChildren<TMP_Text>().text = quest.Title;
         go.GetComponent<QuestButton>().Quest = quest;
-        UIManager.Instance.AddToQueue("Quest Added!");
+        UIManager.Instance.AddToQueue("quest_added");
+    }
+
+    public void AddWithoutMessage(Quest quest)
+    {
+        foreach (Quest currentQuest in CurrentQuests)
+        {
+            if (currentQuest.Title == quest.Title)
+            {
+                UIManager.Instance.AddToQueue("quest_exists");
+                return;
+            }
+        }
+        CurrentQuests.Add(quest);
+
+        GameObject go = Instantiate(UIManager.Instance.QuestPrefab, UIManager.Instance.QuestList.transform);
+        go.name = quest.Title;
+        ChangePanel changePanel = go.GetComponent<ChangePanel>();
+        changePanel.CanvasGroupToOpen = UIManager.Instance.QuestOverviewPanel;
+        changePanel.CanvasGroupToClose = UIManager.Instance.MainPanel;
+        go.GetComponentInChildren<TMP_Text>().text = quest.Title;
+        go.GetComponent<QuestButton>().Quest = quest;
     }
 
     public void RemoveQuest(Quest quest)
@@ -47,6 +69,6 @@ public class QuestSystemComponent : MonoBehaviour
             }
         }
 
-        UIManager.Instance.AddToQueue("Quest Removed!");
+        UIManager.Instance.AddToQueue("quest_removed");
     }
 }

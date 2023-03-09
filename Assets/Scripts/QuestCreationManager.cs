@@ -74,6 +74,7 @@ public class QuestCreationManager : MonoBehaviour
         quest.SetTimeToComplete(System.DateTime.ParseExact(exactTime, "dd-MM-yyyy HH:mm:ss", null));
 
         Player.Instance.QuestSystemComponent.AddQuest(quest);
+
         ClearCreationPanel();
     }
 

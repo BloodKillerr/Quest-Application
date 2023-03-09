@@ -14,7 +14,7 @@ public class Message : MonoBehaviour
 
     public void SetMessage(string text)
     {
-        MessageText.text = text;
+        MessageText.text = LocalizationSystem.Instance.GetLocalizedValue(text);
     }
 
     public void DestroyAfterTime(float delay)

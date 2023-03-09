@@ -103,6 +103,7 @@ public class SaveManager : MonoBehaviour
         }
         catch (System.Exception)
         {
+            PlayerPrefs.DeleteKey("HasSaves");
             throw;
         }
     }
@@ -128,7 +129,7 @@ public class SaveManager : MonoBehaviour
             quest.PunishmentApplied = questData.MyPunishmentApplied;
             quest.TimeToComplete = System.DateTime.ParseExact(questData.MyTimeToComplete, "dd-MM-yyyy HH:mm:ss", null);
 
-            Player.Instance.QuestSystemComponent.AddQuest(quest);
+            Player.Instance.QuestSystemComponent.AddWithoutMessage(quest);
         }
     }
 

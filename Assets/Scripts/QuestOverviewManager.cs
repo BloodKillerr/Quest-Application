@@ -64,7 +64,7 @@ public class QuestOverviewManager : MonoBehaviour
         {
             Quest.GainRewards();
             ChangePanel.ChangeCanvas();
-            UIManager.Instance.AddToQueue("Quest Completed!");
+            UIManager.Instance.AddToQueue("quest_completed");
         }   
     }
 

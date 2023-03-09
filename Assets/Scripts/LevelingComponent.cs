@@ -41,7 +41,7 @@ public class LevelingComponent : MonoBehaviour
         if(CurrentLevel != MaxLevel)
         {
             CurrentLevel += 1;
-            UIManager.Instance.AddToQueue("Level Up!");
+            UIManager.Instance.AddToQueue("levelup");
             DesiredXp = DesiredXp + 150;
         }
         else
