@@ -71,7 +71,7 @@ public class QuestCreationManager : MonoBehaviour
 
         string exactTime = string.Format("{0} 23:59:59", System.DateTime.Now.Date.ToString("dd-MM-yyyy"));
 
-        quest.SetTimeToComplete(System.DateTime.ParseExact(exactTime, "dd-MM-yyyy HH:mm:ss", null));
+        quest.SetNewTime(System.DateTime.ParseExact(exactTime, "dd-MM-yyyy HH:mm:ss", null));
 
         Player.Instance.QuestSystemComponent.AddQuest(quest);
 

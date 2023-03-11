@@ -52,18 +52,9 @@ public class Quest
         }
     }
 
-    public void SetTimeToComplete(System.DateTime dateTime)
-    {
-        IsAvailable = true;
-        TimeToComplete = dateTime;
-        UIManager.Instance.QuestCompleteButton.interactable = true;
-        UIManager.Instance.QuestCompleteText.alpha = 1f;
-    }
-
     public void SetNewTime(System.DateTime dateTime)
     {
         IsAvailable = true;
-        RemovePunishment();
         TimeToComplete = dateTime;
         UIManager.Instance.QuestCompleteButton.interactable = true;
         UIManager.Instance.QuestCompleteText.alpha = 1f;
@@ -98,6 +89,11 @@ public class Quest
                 string newDate = string.Format("{0} 23:59:59", System.DateTime.Now.Date.ToString("dd-MM-yyyy"));
 
                 SetNewTime(System.DateTime.ParseExact(newDate, "dd-MM-yyyy HH:mm:ss", null));
+
+                foreach (Requirement requirement in Requirements)
+                {
+                    requirement.CurrentAmount = 0;
+                }
             }
         }
         else if(IsAvailable && PunishmentApplied)
@@ -107,6 +103,11 @@ public class Quest
                 string newDate = string.Format("{0} 23:59:59", System.DateTime.Now.Date.ToString("dd-MM-yyyy"));
 
                 SetNewTime(System.DateTime.ParseExact(newDate, "dd-MM-yyyy HH:mm:ss", null));
+
+                foreach (Requirement requirement in Requirements)
+                {
+                    requirement.CurrentAmount = 0;
+                }
             }
         }
     }
@@ -120,6 +121,16 @@ public class Quest
                 string newDate = string.Format("{0} 23:59:59", System.DateTime.Now.Date.ToString("dd-MM-yyyy"));
 
                 SetNewTime(System.DateTime.ParseExact(newDate, "dd-MM-yyyy HH:mm:ss", null));
+
+                foreach (Requirement requirement in Requirements)
+                {
+                    requirement.CurrentAmount = 0;
+                }
+
+                if(PunishmentApplied)
+                {
+                    RemovePunishment();
+                }
             }
         }
     }
