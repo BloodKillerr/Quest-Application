@@ -93,6 +93,8 @@ public class Quest
                 foreach (Requirement requirement in Requirements)
                 {
                     requirement.CurrentAmount = 0;
+                    requirement.IsComplete = false;
+                    requirement.IsOnAnotherLevel = false;
                 }
             }
         }
@@ -107,6 +109,8 @@ public class Quest
                 foreach (Requirement requirement in Requirements)
                 {
                     requirement.CurrentAmount = 0;
+                    requirement.IsComplete = false;
+                    requirement.IsOnAnotherLevel = false;
                 }
             }
         }
@@ -125,6 +129,8 @@ public class Quest
                 foreach (Requirement requirement in Requirements)
                 {
                     requirement.CurrentAmount = 0;
+                    requirement.IsComplete = false;
+                    requirement.IsOnAnotherLevel = false;
                 }
 
                 if(PunishmentApplied)
