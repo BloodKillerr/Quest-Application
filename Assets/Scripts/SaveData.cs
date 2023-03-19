@@ -41,7 +41,7 @@ public class QuestData
 
     public List<Requirement> MyRequirements { get; set; }
 
-    public float MyPunishmentRate { get; set; }
+    public int MyPunishmentRate { get; set; }
 
     public int MyXp { get; set; }
 

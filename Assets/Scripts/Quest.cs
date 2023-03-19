@@ -10,7 +10,7 @@ public class Quest
 
     public List<Requirement> Requirements = new List<Requirement>();
 
-    public float PunishmentRate = 1f;
+    public int PunishmentRate = 1;
 
     public int XP = 50;
 
@@ -145,7 +145,7 @@ public class Quest
     {
         foreach(Requirement requirement in Requirements)
         {
-            requirement.DesiredAmount *= 2;
+            requirement.DesiredAmount *= PunishmentRate;
         }
         PunishmentApplied = true;
     }
@@ -154,7 +154,7 @@ public class Quest
     {
         foreach (Requirement requirement in Requirements)
         {
-            requirement.DesiredAmount /= 2;
+            requirement.DesiredAmount /= PunishmentRate;
         }
         PunishmentApplied = false;
     }

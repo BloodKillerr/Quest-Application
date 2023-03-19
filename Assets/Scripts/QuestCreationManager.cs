@@ -37,7 +37,7 @@ public class QuestCreationManager : MonoBehaviour
         Quest quest = new Quest();
         quest.Title = QuestTitleInputField.text;
         int.TryParse(ExperienceAmountInputField.text, out quest.XP);
-        float.TryParse(PunishmentRateInputField.text, out quest.PunishmentRate);
+        int.TryParse(PunishmentRateInputField.text, out quest.PunishmentRate);
         int numberOfRequirements;
         int.TryParse(RequirementsNumberInputField.text, out numberOfRequirements);
 
