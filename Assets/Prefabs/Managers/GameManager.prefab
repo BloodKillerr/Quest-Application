@@ -128,7 +128,7 @@ MonoBehaviour:
   CurrentXp: 0
   DesiredXp: 100
   CurrentLevel: 1
-  MaxLevel: 999
+  MaxLevel: 99
 --- !u!114 &2687509408370733730
 MonoBehaviour:
   m_ObjectHideFlags: 0

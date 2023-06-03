@@ -7,7 +7,7 @@ public class LevelingComponent : MonoBehaviour
     public int CurrentXp = 0;
     public int DesiredXp = 100;
     public int CurrentLevel = 1;
-    public int MaxLevel = 999;
+    public int MaxLevel = 99;
 
     private void Start()
     {
